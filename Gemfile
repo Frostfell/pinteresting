@@ -12,14 +12,15 @@ gem 'bootstrap-sass'
 
 
 group :development, :test do
-	gem 'sqlite3'
+     gem 'sqlite3'
 end
 
-group :production, do
-	gem 'pg'
-	gem 'rails_12factor'
+group :production do
+     gem 'pg'
+     gem 'rails_12factor'
 end
 
-gem 'sdoc', '~> 0.4.0',          group: :doc
-
-gem 'tzinfo-data', platforms: [:mingw, :mswin]
+group :doc do
+  # bundle exec rake doc:rails generates the API under doc/api.
+  gem 'sdoc', require: false
+end
